@@ -492,7 +492,7 @@ select f.title, c."name"
 from film f 
 inner join film_category fc on f.film_id = fc.film_id
 inner join category c on fc.category_id = c.category_id
-where c."name" = 'Animation'
+where c."name" = 'Animation';
 
 --59. Encuentra los nombres de las películas que tienen la misma duración que la película con el título ‘Dancing Fever’. Ordena los resultados alfabéticamente por título de película.
 
@@ -503,7 +503,7 @@ where f.length = (
 	from film f
 	where f.title = 'DANCING FEVER'
 	)
-order by f.title 
+order by f.title;
 
 --60. Encuentra los nombres de los clientes que han alquilado al menos 7 películas distintas. Ordena los resultados alfabéticamente por apellido.
 with alquileres_clientes as(
@@ -542,7 +542,7 @@ order by c."name";
 
 select *
 from store s 
-cross join staff s2 
+cross join staff s2;
 
 --64. Encuentra la cantidad total de películas alquiladas por cada cliente y muestra el ID del cliente, su nombre y apellido junto con la cantidad de películas alquiladas.
 
@@ -551,4 +551,5 @@ select c.customer_id, c.first_name, c.last_name,
 from rental r 
 inner join customer c on c.customer_id = r.customer_id 
 group by c.customer_id, c.first_name, c.last_name 
-order by c.customer_id 
+
+order by c.customer_id;
